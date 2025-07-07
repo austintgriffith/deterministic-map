@@ -1,0 +1,24 @@
+{
+  "name": "deterministic-map",
+  "version": "1.0.1",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node example/generateMap.js"
+  },
+  "keywords": [
+    "deterministic",
+    "map",
+    "game",
+    "crypto",
+    "random"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "A deterministic map generator using cryptographic hashes for reproducible game maps",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
