@@ -1,11 +1,11 @@
 import crypto from "crypto";
 
 class DeterministicDice {
-  constructor(revealHash) {
+  constructor(randomHash) {
     // Strip 0x prefix and store as entropy
-    this.entropy = revealHash.startsWith("0x")
-      ? revealHash.slice(2)
-      : revealHash;
+    this.entropy = randomHash.startsWith("0x")
+      ? randomHash.slice(2)
+      : randomHash;
     this.position = 0;
     console.log(`Initialized with entropy: ${this.entropy}`);
   }

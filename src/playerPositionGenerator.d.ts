@@ -4,9 +4,9 @@ interface Position {
 }
 
 declare class PlayerPositionGenerator {
-  revealSeed: string;
+  randomSeed: string;
 
-  constructor(revealSeed: string);
+  constructor(randomSeed: string);
 
   /**
    * Generate a deterministic starting position for a player

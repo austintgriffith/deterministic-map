@@ -1,6 +1,6 @@
 # Deterministic Map Generator
 
-A deterministic map generation system that creates game maps based on cryptographic hashes. This system uses a reveal hash to generate consistent, reproducible maps for games.
+A deterministic map generation system that creates game maps based on cryptographic hashes. This system uses a random hash to generate consistent, reproducible maps for games.
 
 ## Features
 
@@ -20,7 +20,7 @@ deterministic-map/
 │   └── playerPositionGenerator.js  # PlayerPositionGenerator class
 ├── example/
 │   └── generateMap.js              # Example usage script
-├── reveal_sample.txt               # Sample reveal hash
+├── random_sample.txt               # Sample random hash
 ├── package.json                    # Project dependencies
 └── README.md                       # This file
 ```
@@ -31,7 +31,7 @@ deterministic-map/
 
 Generates deterministic random numbers based on a cryptographic hash.
 
-- **Constructor**: Takes a reveal hash as entropy source
+- **Constructor**: Takes a random hash as entropy source
 - **roll(count)**: Generates random numbers using hex characters
 - **rehashEntropy()**: Extends entropy by hashing when needed
 
@@ -58,7 +58,7 @@ Generates deterministic starting positions for players.
 ```javascript
 import { DeterministicDice, GameLandGenerator } from "./src/index.js";
 
-// Create dice with reveal hash
+// Create dice with random hash
 const dice = new DeterministicDice("0x1234567890abcdef...");
 
 // Generate 20x20 map
@@ -78,7 +78,7 @@ node example/generateMap.js sample
 node example/generateMap.js --gameId=sample
 ```
 
-This requires a file named `reveal_sample.txt` containing the reveal hash.
+This requires a file named `random_sample.txt` containing the random hash.
 
 ## Land Types
 
@@ -101,7 +101,7 @@ npm install
 
 ## Testing
 
-Use the provided `reveal_sample.txt` file to test the system:
+Use the provided `random_sample.txt` file to test the system:
 
 ```bash
 node example/generateMap.js sample

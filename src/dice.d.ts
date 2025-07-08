@@ -2,7 +2,7 @@ declare class DeterministicDice {
   entropy: string;
   position: number;
 
-  constructor(revealHash: string);
+  constructor(randomHash: string);
 
   /**
    * Roll x dice (use x characters from entropy)

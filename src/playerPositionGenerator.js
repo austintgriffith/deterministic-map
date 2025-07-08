@@ -1,14 +1,14 @@
 import crypto from "crypto";
 
 class PlayerPositionGenerator {
-  constructor(revealSeed) {
-    this.revealSeed = revealSeed;
+  constructor(randomSeed) {
+    this.randomSeed = randomSeed;
   }
 
   generateStartingPosition(playerAddress, gameId, mapSize) {
-    // Combine reveal seed, player address, and game ID for deterministic positioning
+    // Combine random seed, player address, and game ID for deterministic positioning
     const combined =
-      this.revealSeed + playerAddress.toLowerCase() + gameId.toString();
+      this.randomSeed + playerAddress.toLowerCase() + gameId.toString();
 
     // Create hash for deterministic coordinates
     const hash = crypto.createHash("sha256").update(combined).digest("hex");

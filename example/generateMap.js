@@ -20,12 +20,12 @@ function main() {
 
     console.log(`🎮 Generating map for Game ID: ${gameId}`);
 
-    // Read the reveal hash
-    const revealHash = fs.readFileSync(`reveal_${gameId}.txt`, "utf8").trim();
-    console.log(`Read reveal hash: ${revealHash}`);
+    // Read the random hash
+    const randomHash = fs.readFileSync(`random_${gameId}.txt`, "utf8").trim();
+    console.log(`Read random hash: ${randomHash}`);
 
     // Initialize deterministic dice
-    const dice = new DeterministicDice(revealHash);
+    const dice = new DeterministicDice(randomHash);
 
     // Test the dice system
     console.log("\n🎲 Testing dice system:");
@@ -35,7 +35,7 @@ function main() {
 
     // Reset dice for actual generation
     const gameGenerator = new GameLandGenerator(
-      new DeterministicDice(revealHash)
+      new DeterministicDice(randomHash)
     );
 
     // Generate the land
@@ -54,9 +54,9 @@ function main() {
     console.log(`Check map_${gameId}.txt for the generated map data.`);
   } catch (error) {
     console.error("❌ Error:", error.message);
-    if (error.message.includes("ENOENT") && error.message.includes("reveal_")) {
+    if (error.message.includes("ENOENT") && error.message.includes("random_")) {
       console.log(
-        "💡 Make sure reveal_<gameId>.txt exists (run commit.js first)"
+        "💡 Make sure random_<gameId>.txt exists (run commit.js first)"
       );
     }
     process.exit(1);
