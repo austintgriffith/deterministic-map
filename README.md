@@ -1,5 +1,7 @@
 # Deterministic Map Generator
 
+## [https://cryptohunter.fun](https://cryptohunter.fun/)
+
 A deterministic map generation system that creates game maps based on cryptographic hashes. This system uses a random hash to generate consistent, reproducible maps for games.
 
 ## Features
